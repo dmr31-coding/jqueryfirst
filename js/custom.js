@@ -56,13 +56,46 @@
 
 jQuery.noConflict();
 jQuery(document).ready(function ($) {
+
+    // Mouse Events
     $("p").click(function () {
-        alert("Element Selector");
+        console.log("clicked");
     });
-    $("#btn-id").click(function () {
-        alert("ID Selector");
+    $("p").dblclick(function () {
+        console.log("Double clicked");
     });
-    $(".btn-class").click(function () {
-        alert("Class Selector");
+    $("p").mouseenter(function () {
+        console.log("Mouse enter");
     });
-})
+    $("p").mouseleave(function () {
+        console.log("Mouse Leave");
+    });
+
+    //keyboard events
+    $("#name").keypress(function () {
+        console.log("key pressed");
+    });
+    $("#name").keydown(function () {
+        console.log("key Down");
+    });
+    $("#name").keyup(function () {
+        console.log("key Up");
+    });
+
+    //form events
+    $("#fname").focus(function () {
+        console.log("Focus field");
+    });
+    $("#fname").blur(function () {
+        console.log("Blur field");
+    });
+    $("#form-id").submit(function (e) {
+        console.log("Form submitted.");
+        e.preventDefault();
+    });
+
+    //window event
+    $("window").resize(function () {
+        console.log("window resized.");
+    });
+});
