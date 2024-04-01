@@ -219,4 +219,60 @@ jQuery(document).ready(function ($) {
         let newsetvalue = "This is new set value";
         $("#name").val(newsetvalue)
     })
-});
+
+    //set attribute
+    let attrvalue1 = $("link").attr("href")
+    console.log(attrvalue1)
+
+    let attrvalue2 = $("#name").attr("data-sid")
+    console.log(attrvalue2)
+
+    //set attribute
+    $("#btn-setAttrvalue").click(function () {
+
+        //get old data
+        console.log("Old Data:", $("#name").attr("data-sid"))
+
+        //set new data
+        $("#name").attr("data-sid", "10")
+        console.log("New data set")
+
+        //get new data
+        console.log("New Data:", $("#name").attr("data-sid"))
+    })
+
+    //set image src attribute
+    $("#btn-setImgAttrvalue").click(function () {
+        $("#image-id").attr("src", "image/pic4.avif")
+    })
+
+    //Add CSS
+    $("#btn-addClass").click(function () {
+        $("p").addClass("myclass")
+    })
+
+    //Remove CSS
+    $("#btn-removeClass").click(function () {
+        $("p").removeClass("myclass")
+    })
+
+    //Toggle CSS
+    $("#btn-toggleClass").click(function () {
+        $("p").toggleClass("myclass")
+    })
+
+    //get CSS property value
+    let divcolor = $("#div-id").css("color");
+    console.log(divcolor);
+    })
+
+    //set css property
+    $("#btn-setCSS").click(function () {
+        $("#div-id").css("font-size", 70)
+    })
+
+    //set Multiple css property
+    $("#btn-setMultiCSS").click(function () {
+        $("#div-id").css({"font-size":70, "background-color":"yellow"})
+    })
+})
